@@ -2,9 +2,6 @@
 
 @section('content')
 
-    @if (!isset($proveidor->id))
-        <p>No hi ha proveïdor</p>
-    @else
     <div class="page-header">
         <h1>Edit proveïdor</h1>
     </div>
@@ -24,5 +21,4 @@
         <input type="submit" value="Save" class="btn btn-primary" />
         <a href="{{ action('ProveidorsController@index') }}" class="btn btn-link">Cancel</a>
     </form>
-    @endif
 @stop

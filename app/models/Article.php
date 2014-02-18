@@ -4,7 +4,7 @@ class Article extends Eloquent {
 
 	public function factura()
 	{
-		return $this->hasOne('Factura');
+		return $this->belongsTo('Factura', 'idfactura', 'id');
 	}
 
 }

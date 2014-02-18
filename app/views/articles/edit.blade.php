@@ -1,27 +1,30 @@
 @extends('layouts.layout')
 
 @section('content')
+
     <div class="page-header">
-        <h1>Crea nou article <small> i emparella amb la seva factura</small></h1>
+        <h1>Edita article</h1>
     </div>
 
-    <form class="form-horizontal form-small" action="{{ action('ArticlesController@handleCreate') }}" method="post" role="form">
+    <form class="form-horizontal form-small" action="{{ action('ArticlesController@handleEdit') }}" method="post" role="form">
+        <input type="hidden" name="id" value="{{ $article->id }}">
+
         <div class="form-group">
             <div class="col-lg-4">
                 <label for="descripcio">Descripcio</label>
-                <input type="text" class="form-control" name="descripcio" />
+                <input type="text" class="form-control" name="descripcio" value="{{ $article->descripcio }}" />
             </div>
         </div>
         <div class="form-group">
             <div class="col-lg-2">
                 <label for="nserie">N.Serie</label>
-                <input type="text" class="form-control" name="nserie" />
+                <input type="text" class="form-control" name="nserie" value="{{ $article->nserie }}" />
             </div>
         </div>
         <div class="form-group">
             <div class="col-lg-1">
                 <label for="quantitat">Quantitat</label>
-                <input type="text" class="form-control" name="quantitat" maxlength="2" />
+                <input type="text" class="form-control" name="quantitat" maxlength="2" value="{{ $article->quantitat }}" />
             </div>
         </div>
          <div class="form-group">
@@ -31,12 +34,12 @@
                     <?php $factures = Factura::all(); ?>
                     @foreach($factures as $factura)
                     <?php $proveidor = Factura::find($factura->id)->proveidor; ?>
-                    <option value="{{ $factura->id }}">{{ $factura->idfactura }} - {{ $proveidor->nom }}</option>
+                    <option value="{{ $factura->id }}" {{ $factura->id == $article->idfactura ? 'selected' : '' }}>{{ $factura->idfactura }} - {{ $proveidor->nom }}</option>
                     @endforeach
                 </select>
             </div>
         </div>
-        <input type="submit" value="Create" class="btn btn-primary" />
+        <input type="submit" value="Edita" class="btn btn-primary" />
         <a href="{{ action('ArticlesController@index') }}" class="btn btn-link">Cancel</a>
     </form>
 @stop

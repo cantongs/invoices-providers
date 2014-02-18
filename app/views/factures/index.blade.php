@@ -17,7 +17,7 @@
 					<th>Id</th>
 					<th>Proveïdor</th>
 					<th>Data</th>
-					<th>Alta el</th>
+					<th>Creada el</th>
 					<th>Modificada el</th>
 					<th>Accions</th>
 				</tr>
@@ -26,7 +26,7 @@
 				@foreach($factures as $factura)
 				<tr>
 					<td>{{ $factura->idfactura }}</td>
-					{{ $proveidor = Factura::find(1)->proveidor }}
+					<?php $proveidor = Factura::find($factura->id)->proveidor ?>
 					<td>{{ $proveidor->nom }}</td>
 					<td>{{ $factura->data }}</td>
 					<td>{{ $factura->created_at }}</td>

@@ -6,6 +6,6 @@ class Factura extends Eloquent {
 
 	public function proveidor()
 	{
-		return $this->belongsTo('Proveidor');
+		return $this->belongsTo('Proveidor', 'idproveidor', 'id');
 	}
 }

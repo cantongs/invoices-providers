@@ -23,17 +23,33 @@ class ArticlesController extends BaseController
 	public function handleCreate()
 	{
 		// Handle create form submission
+		$article = new Article;
+		$article->descripcio		= Input::get('descripcio');
+		$article->nserie 			= Input::get('nserie');
+		$article->quantitat 		= Input::get('quantitat');
+		$article->idfactura			= Input::get('idfactura');
+		$article->save();
+
+		return Redirect::action('ArticlesController@index');
 	}
 
 	public function edit(Article $article)
 	{
 		// Show the edit article form
-		return View::make('articles.edit');
+		return View::make('articles.edit', compact('article'));
 	}
 
 	public function handleEdit()
 	{
 		// Handle edit form submission
+		$article = Article::findOrFail(Input::get('id'));
+		$article->descripcio 		= Input::get('descripcio');
+		$article->nserie 			= Input::get('nserie');
+		$article->quantitat 		= Input::get('quantitat');
+		$article->idfactura 		= Input::get('idfactura');
+		$article->save();
+
+		return Redirect::action('ArticlesController@index');
 	}
 
 	public function delete(Article $article)
@@ -42,11 +58,11 @@ class ArticlesController extends BaseController
 		return View::make('articles.delete', compact('article'));
 	}
 
-	public function handleDelete(Article $article)
+	public function handleDelete()
 	{
 		// Handle the delete confirmation
 		//$id = Input::get('article');
-		$article = Article::findOrFail($article->id);
+		$article = Article::findOrFail(Input::get('article'));
 		$article->delete();
 
 		return Redirect::action('ArticlesController@index');
