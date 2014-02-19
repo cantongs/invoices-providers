@@ -7,7 +7,8 @@
     </div>
 
     @if ($articles->isEmpty())
-        <p>No hi ha articles! :(</p>
+        <p>No hi ha articles inventariats :(</p>
+        <a href="{{ action('ArticlesController@create') }}" class="btn btn-default">Nova entrada</a>
     @else
         <a href="{{ action('ArticlesController@create') }}" class="btn btn-default">Nova entrada</a>
         <table class="table table-compressed">

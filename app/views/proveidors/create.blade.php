@@ -5,11 +5,11 @@
         <h1>Crea nou proveïdor</h1>
     </div>
 
-    <form class="form-horizontal form-small" action="{{ action('ProveidorsController@handleCreate') }}" method="post" role="form">
+    <form id="create_proveidor" class="form-horizontal form-small" action="{{ action('ProveidorsController@handleCreate') }}" method="post" role="form">
         <div class="form-group">
             <div class="col-lg-3">
                 <label for="nom">Nom</label>
-                <input type="text" class="form-control" name="nom" />
+                <input class="required" type="text" class="form-control" name="nom" />
             </div>
         </div>
         <div class="form-group">

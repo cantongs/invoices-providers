@@ -8,4 +8,9 @@ class Factura extends Eloquent {
 	{
 		return $this->belongsTo('Proveidor', 'idproveidor', 'id');
 	}
+
+	public function articles()
+	{
+		return $this->hasMany('Article', 'idfactura', 'id' );
+	}
 }

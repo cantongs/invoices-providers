@@ -23,3 +23,8 @@
 .form-xlarge .controls {
     margin-left: 260px;
 }
+
+input.required.highlight {
+	border: 1px solid red;
+	border-radius: 7px;
+}

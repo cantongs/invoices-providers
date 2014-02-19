@@ -26,12 +26,12 @@
                 </select>
             </div>
         </div>
-         <div class="form-group">
+         <!--<div class="form-group">
             <div class="col-lg-2">
                 <label for="data">Data</label>
                 <input type="text" class="form-control" name="data" value="{{ $factura->data }}" />
             </div>
-        </div>
+        </div>-->
         <br>
         
         <input type="submit" value="Edita" class="btn btn-primary" />

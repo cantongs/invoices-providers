@@ -16,7 +16,7 @@
 				<tr>
 					<th>Id</th>
 					<th>Proveïdor</th>
-					<th>Data</th>
+					<!--<th>Data</th>-->
 					<th>Creada el</th>
 					<th>Modificada el</th>
 					<th>Accions</th>
@@ -28,7 +28,7 @@
 					<td>{{ $factura->idfactura }}</td>
 					<?php $proveidor = Factura::find($factura->id)->proveidor ?>
 					<td>{{ $proveidor->nom }}</td>
-					<td>{{ $factura->data }}</td>
+					<!--<td>{{ $factura->data }}</td>-->
 					<td>{{ $factura->created_at }}</td>
 					<td>{{ $factura->updated_at }}</td>
 					<td>

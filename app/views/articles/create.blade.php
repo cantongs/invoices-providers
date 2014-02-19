@@ -7,9 +7,9 @@
 
     <form class="form-horizontal form-small" action="{{ action('ArticlesController@handleCreate') }}" method="post" role="form">
         <div class="form-group">
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <label for="descripcio">Descripcio</label>
-                <input type="text" class="form-control" name="descripcio" />
+                <input class="required" type="text" class="form-control" name="descripcio" />
             </div>
         </div>
         <div class="form-group">
@@ -21,7 +21,7 @@
         <div class="form-group">
             <div class="col-lg-1">
                 <label for="quantitat">Quantitat</label>
-                <input type="text" class="form-control" name="quantitat" maxlength="2" />
+                <input class="required" type="text" class="form-control" name="quantitat" maxlength="2" />
             </div>
         </div>
          <div class="form-group">

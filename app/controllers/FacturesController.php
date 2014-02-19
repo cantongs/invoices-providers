@@ -26,7 +26,7 @@ class FacturesController extends BaseController
 		$factura = new Factura;
 		$factura->idfactura 		= Input::get('idfactura');
 		$factura->idproveidor 	= Input::get('idproveidor');
-		$factura->data 			= Input::get('data');
+		//$factura->data 			= Input::get('data');
 		$factura->save();
 
 		return Redirect::action('FacturesController@index');
@@ -44,7 +44,7 @@ class FacturesController extends BaseController
 		$factura = Factura::findOrFail(Input::get('id'));
 		$factura->idfactura		= Input::get('idfactura');
 		$factura->idproveidor 	= Input::get('idproveidor');
-		$factura->data 			= Input::get('data');
+		//$factura->data 			= Input::get('data');
 		$factura->save();
 
 		return Redirect::action('FacturesController@index');

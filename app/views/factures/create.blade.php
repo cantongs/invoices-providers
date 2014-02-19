@@ -9,7 +9,7 @@
         <div class="form-group">
             <div class="col-lg-2">
                 <label for="idfactura">Idfactura</label>
-                <input type="text" class="form-control" name="idfactura" placeholder="10/2013" />
+                <input class="required" type="text" class="form-control" name="idfactura" placeholder="10/2013" />
             </div>
         </div>
         <div class="form-group">
@@ -23,12 +23,12 @@
                 </select>
             </div>
         </div>
-         <div class="form-group">
+        <!--<div class="form-group">
             <div class="col-lg-2">
                 <label for="data">Data</label>
-                <input type="text" class="form-control" name="data" placeholder="17-02-2014" />
+                <input class="required" type="text" class="form-control" name="data" placeholder="17-02-2014" />
             </div>
-        </div>
+        </div>-->
         <br>
         
         <input type="submit" value="Create" class="btn btn-primary" />
