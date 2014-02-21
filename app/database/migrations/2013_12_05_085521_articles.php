@@ -18,6 +18,8 @@ class Articles extends Migration {
 			$table->string('nserie', 128);
 			$table->integer('quantitat');
 			$table->integer('idfactura');
+
+			// created_at, updated_at DATETIME
 			$table->timestamps();
 		});
 	}

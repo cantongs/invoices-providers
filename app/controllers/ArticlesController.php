@@ -28,6 +28,7 @@ class ArticlesController extends BaseController
 		$article->nserie 			= Input::get('nserie');
 		$article->quantitat 		= Input::get('quantitat');
 		$article->idfactura			= Input::get('idfactura');
+		$article->actiu 			= Input::has('actiu');
 		$article->save();
 
 		return Redirect::action('ArticlesController@index');
@@ -47,6 +48,7 @@ class ArticlesController extends BaseController
 		$article->nserie 			= Input::get('nserie');
 		$article->quantitat 		= Input::get('quantitat');
 		$article->idfactura 		= Input::get('idfactura');
+		$article->actiu 			= Input::has('actiu');
 		$article->save();
 
 		return Redirect::action('ArticlesController@index');
@@ -66,5 +68,11 @@ class ArticlesController extends BaseController
 		$article->delete();
 
 		return Redirect::action('ArticlesController@index');
+	}
+
+	public function stock()
+	{
+		$articles = Article::where('actiu', '=', 0)->get();
+		return View::make('articles.index', compact('articles'));
 	}
 }

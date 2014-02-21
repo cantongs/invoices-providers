@@ -27,6 +27,15 @@
                 <input type="text" class="form-control" name="quantitat" maxlength="2" value="{{ $article->quantitat }}" />
             </div>
         </div>
+        <div class="form-group">
+            <div class="col-lg-1">
+                <div class="checkbox">
+                    <label for="actiu">
+                        <input type="checkbox" name="actiu" {{ $article->actiu ? 'checked' : '' }} /> Actiu?
+                    </label>
+                </div>
+            </div>
+        </div>
          <div class="form-group">
             <div class="col-lg-3">
                 <label for="factura">Factura</label>

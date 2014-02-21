@@ -23,6 +23,7 @@ Route::get('/', 'ArticlesController@index');
 Route::get('/article/create', 'ArticlesController@create');
 Route::get('/article/edit/{article}', 'ArticlesController@edit');
 Route::get('/article/delete/{article}', 'ArticlesController@delete');
+Route::get('/article/filter/stock', 'ArticlesController@stock');
 
 // Handle form submissions.
 Route::post('/article/create', 'ArticlesController@handleCreate');

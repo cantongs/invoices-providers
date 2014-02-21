@@ -1,13 +1,15 @@
 @extends('layouts.layout')
 
 @section('content')
+
     <div class="page-header">
         <h1>Crea nou article <small> i emparella amb la seva factura</small></h1>
     </div>
 
     <form class="form-horizontal form-small" action="{{ action('ArticlesController@handleCreate') }}" method="post" role="form">
+        
         <div class="form-group">
-            <div class="col-lg-6">
+            <div class="col-lg-2">
                 <label for="descripcio">Descripcio</label>
                 <input class="required" type="text" class="form-control" name="descripcio" />
             </div>
@@ -22,6 +24,14 @@
             <div class="col-lg-1">
                 <label for="quantitat">Quantitat</label>
                 <input class="required" type="text" class="form-control" name="quantitat" maxlength="2" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-1">
+                <div class="checkbox">
+                    <label for="actiu">Actiu?</label>
+                    <input type="checkbox" name="actiu" />
+                </div>
             </div>
         </div>
          <div class="form-group">

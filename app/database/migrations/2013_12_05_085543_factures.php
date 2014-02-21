@@ -17,6 +17,8 @@ class Factures extends Migration {
 			$table->string('idfactura', 50);
 			$table->integer('idproveidor');
 			//$table->string('data', 10);
+
+			// created_at, updated_at DATETIME
 			$table->timestamps();
 		});
 	}

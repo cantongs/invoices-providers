@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class Proveidors extends Migration {
+class ArticlesActiuField extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,14 +11,9 @@ class Proveidors extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('proveidors', function($table)
+		Schema::table('articles', function($table)
 		{
-			$table->increments('id');
-			$table->string('nom', 128);
 			$table->boolean('actiu');
-
-			// created_at, updated_at DATETIME
-			$table->timestamps();
 		});
 	}
 
@@ -29,7 +24,10 @@ class Proveidors extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('proveidors');
+		Schema::table('articles', function($table)
+		{
+			$table->dropColumn('actiu');
+		});
 	}
 
 }
